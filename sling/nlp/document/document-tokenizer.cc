@@ -16,7 +16,7 @@
 
 #include "sling/base/types.h"
 #include "sling/nlp/document/document.h"
-#include "sling/nlp/document/text-tokenizer.h"
+#include "sling/nlp/tokenizer/text-tokenizer.h"
 #include "sling/string/text.h"
 
 namespace sling {
@@ -24,7 +24,7 @@ namespace nlp {
 
 DocumentTokenizer::DocumentTokenizer() {
   // Initialize tokenizer.
-  tokenizer_.InitLDC();
+  tokenizer_.Init();
 }
 
 void DocumentTokenizer::Tokenize(Document *document, Text text) const {
@@ -35,7 +35,7 @@ void DocumentTokenizer::Tokenize(Document *document, Text text) const {
 void DocumentTokenizer::Tokenize(Document *document) const {
   string text = document->GetText();
   tokenizer_.Tokenize(text,
-    [document](const Tokenizer::Token &t) {
+    [document](const CharacterToken &t) {
       document->AddToken(t.text, t.begin, t.end, t.brk);
     }
   );

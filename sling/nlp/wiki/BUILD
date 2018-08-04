@@ -81,7 +81,7 @@ cc_library(
     ":wikipedia-map",
     "//sling/base",
     "//sling/frame",
-    "//sling/nlp/document:text-tokenizer",
+    "//sling/nlp/tokenizer:text-tokenizer",
     "//sling/nlp/document:tokens",
     "//sling/task",
     "//sling/task:frames",

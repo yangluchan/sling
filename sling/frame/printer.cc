@@ -110,22 +110,22 @@ void Printer::PrintString(const StringDatum *str) {
     NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,    // 0x68
     NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,    // 0x70
     NONE, NONE, NONE, NONE, NONE, NONE, NONE, HEX,     // 0x78
-    UTF, UTF, UTF, UTF, UTF, UTF, UTF, UTF,            // 0x80
-    UTF, UTF, UTF, UTF, UTF, UTF, UTF, UTF,            // 0x88
-    UTF, UTF, UTF, UTF, UTF, UTF, UTF, UTF,            // 0x90
-    UTF, UTF, UTF, UTF, UTF, UTF, UTF, UTF,            // 0x98
-    UTF, UTF, UTF, UTF, UTF, UTF, UTF, UTF,            // 0xA0
-    UTF, UTF, UTF, UTF, UTF, UTF, UTF, UTF,            // 0xA8
-    UTF, UTF, UTF, UTF, UTF, UTF, UTF, UTF,            // 0xB0
-    UTF, UTF, UTF, UTF, UTF, UTF, UTF, UTF,            // 0xB8
-    UTF, UTF, UTF, UTF, UTF, UTF, UTF, UTF,            // 0xC0
-    UTF, UTF, UTF, UTF, UTF, UTF, UTF, UTF,            // 0xC8
-    UTF, UTF, UTF, UTF, UTF, UTF, UTF, UTF,            // 0xD0
-    UTF, UTF, UTF, UTF, UTF, UTF, UTF, UTF,            // 0xD8
-    UTF, UTF, UTF, UTF, UTF, UTF, UTF, UTF,            // 0xE0
-    UTF, UTF, UTF, UTF, UTF, UTF, UTF, UTF,            // 0xE8
-    UTF, UTF, UTF, UTF, UTF, UTF, UTF, UTF,            // 0xF0
-    UTF, UTF, UTF, UTF, UTF, UTF, UTF, UTF,            // 0xF8
+    NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,            // 0x80
+    NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,            // 0x88
+    NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,            // 0x90
+    NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,            // 0x98
+    NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,            // 0xA0
+    NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,            // 0xA8
+    NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,            // 0xB0
+    NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,            // 0xB8
+    NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,            // 0xC0
+    NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,            // 0xC8
+    NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,            // 0xD0
+    NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,            // 0xD8
+    NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,            // 0xE0
+    NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,            // 0xE8
+    NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,            // 0xF0
+    NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE,            // 0xF8
   };
 
   // Hexadecimal digits.

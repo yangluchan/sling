@@ -17,7 +17,7 @@
 
 #include "sling/base/logging.h"
 #include "sling/base/types.h"
-#include "sling/nlp/document/text-tokenizer.h"
+#include "sling/nlp/tokenizer/text-tokenizer.h"
 #include "sling/nlp/document/tokens.h"
 #include "sling/nlp/wiki/wikipedia-map.h"
 #include "sling/nlp/wiki/wiki-parser.h"
@@ -65,7 +65,7 @@ class WikipediaDocumentBuilder : public task::FrameProcessor {
     task->GetCounter("wiki_redirects")->Increment(wikimap_.redirects().size());
 
     // Initialize tokenizer.
-    tokenizer_.InitLDC();
+    tokenizer_.Init();
 
     // Get counters.
     num_article_pages_ = task->GetCounter("article_pages");
@@ -176,7 +176,7 @@ class WikipediaDocumentBuilder : public task::FrameProcessor {
     article.Add(n_document_text_, text);
     Handles tokens(store);
     tokenizer_.Tokenize(text,
-      [this, store, &tokens](const nlp::Tokenizer::Token &t) {
+      [this, store, &tokens](const nlp::CharacterToken &t) {
         int index = tokens.size();
         Builder token(store);
         token.AddIsA(n_token_);

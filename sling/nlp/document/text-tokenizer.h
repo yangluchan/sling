@@ -22,7 +22,7 @@
 
 #include "sling/base/macros.h"
 #include "sling/base/types.h"
-#include "sling/nlp/document/token-breaks.h"
+#include "sling/nlp/tokenizer/character-token.h"
 #include "sling/string/text.h"
 #include "sling/util/unicode.h"
 

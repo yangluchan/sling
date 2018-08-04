@@ -1,17 +1,12 @@
 package(default_visibility = ["//visibility:public"])
 
 cc_library(
-  name = "token-breaks",
-  hdrs = ["token-breaks.h"],
-)
-
-cc_library(
   name = "document",
   srcs = ["document.cc"],
   hdrs = ["document.h"],
   deps = [
     ":fingerprinter",
-    ":token-breaks",
+    "//sling/nlp/tokenizer:character-token",
     "//sling/base",
     "//sling/frame:object",
     "//sling/frame:store",
@@ -19,26 +14,13 @@ cc_library(
   ],
 )
 
-cc_library(
-  name = "text-tokenizer",
-  srcs = ["text-tokenizer.cc"],
-  hdrs = ["text-tokenizer.h"],
-  deps = [
-    ":token-breaks",
-    "//sling/base",
-    "//sling/string:ctype",
-    "//sling/string:text",
-    "//sling/util:unicode",
-    "//sling/web:entity-ref",
-  ],
-)
 
 cc_library(
   name = "tokens",
   srcs = ["tokens.cc"],
   hdrs = ["tokens.h"],
   deps = [
-    ":text-tokenizer",
+    "//sling/nlp/tokenizer:text-tokenizer",
     "//sling/base",
     "//sling/frame:object",
     "//sling/frame:store",
@@ -63,7 +45,7 @@ cc_library(
   hdrs = ["phrase-tokenizer.h"],
   deps = [
     ":fingerprinter",
-    ":text-tokenizer",
+    "//sling/nlp/tokenizer:text-tokenizer",
     "//sling/base",
     "//sling/string:text",
   ],
@@ -75,7 +57,8 @@ cc_library(
   hdrs = ["document-tokenizer.h"],
   deps = [
     ":document",
-    ":text-tokenizer",
+    "//sling/nlp/tokenizer:character-token",
+    "//sling/nlp/tokenizer:text-tokenizer",
     "//sling/base",
     "//sling/frame:object",
     "//sling/frame:store",

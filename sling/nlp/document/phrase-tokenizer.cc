@@ -19,20 +19,20 @@
 
 #include "sling/base/types.h"
 #include "sling/nlp/document/fingerprinter.h"
-#include "sling/nlp/document/text-tokenizer.h"
+#include "sling/nlp/tokenizer/text-tokenizer.h"
 #include "sling/string/text.h"
 
 namespace sling {
 namespace nlp {
 
 PhraseTokenizer::PhraseTokenizer() {
-  tokenizer_.InitLDC();
+  tokenizer_.Init();
 }
 
 void PhraseTokenizer::Tokenize(Text text, std::vector<string> *tokens) const {
   tokens->clear();
   tokenizer_.Tokenize(text,
-    [tokens](const Tokenizer::Token &t) {
+    [tokens](const CharacterToken &t) {
       tokens->push_back(t.text);
     }
   );
@@ -44,7 +44,7 @@ uint64 PhraseTokenizer::TokenFingerprints(Text text,
   uint64 fp = 1;
   Normalization normalization = normalization_;
   tokenizer_.Tokenize(text,
-    [tokens, &fp, normalization](const Tokenizer::Token &t) {
+    [tokens, &fp, normalization](const CharacterToken &t) {
       uint64 word_fp = Fingerprinter::Fingerprint(t.text, normalization);
       tokens->push_back(word_fp);
       if (word_fp != 1) fp = Fingerprinter::Mix(word_fp, fp);
@@ -57,7 +57,7 @@ uint64 PhraseTokenizer::Fingerprint(Text text) const {
   uint64 fp = 1;
   Normalization normalization = normalization_;
   tokenizer_.Tokenize(text,
-    [&fp, normalization](const Tokenizer::Token &t) {
+    [&fp, normalization](const CharacterToken &t) {
       fp = Fingerprinter::Fingerprint(t.text, fp, normalization);
     }
   );

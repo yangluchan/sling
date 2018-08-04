@@ -16,7 +16,7 @@
 #define SLING_NLP_DOCUMENT_PHRASE_TOKENIZER_H_
 
 #include "sling/base/types.h"
-#include "sling/nlp/document/text-tokenizer.h"
+#include "sling/nlp/tokenizer/text-tokenizer.h"
 #include "sling/nlp/document/fingerprinter.h"
 #include "sling/string/text.h"
 

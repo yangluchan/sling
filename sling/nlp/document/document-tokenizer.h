@@ -16,7 +16,7 @@
 #define SLING_NLP_DOCUMENT_DOCUMENT_TOKENIZER_H_
 
 #include "sling/nlp/document/document.h"
-#include "sling/nlp/document/text-tokenizer.h"
+#include "sling/nlp/tokenizer/text-tokenizer.h"
 #include "sling/string/text.h"
 
 namespace sling {
